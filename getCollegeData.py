@@ -24,6 +24,6 @@ with open("collegeBoard.csv") as csvfileA:
             time.sleep(1)
             try:
                 CollegeName = driver.find_element_by_xpath('//*[@id="titleFrame"]/div/div[1]/h1')
-                writer.writerow({'Result': CollegeName})
+                writer.writerow({'Result': CollegeName.text})
             except NoSuchElementException:
                 writer.writerow({'Result': "ERROR: " + collegeRawName})
